@@ -1,0 +1,10 @@
+*** Settings ***
+Library         SudsLibrary
+Resource        ../global/keywords.robot
+Force Tags      soap
+
+*** Test Cases ***
+Call Webservice Happy Flow
+  Create Soap Client  ${URL}/ws/squareroots.wsdl
+  ${result} =  Call Soap Method  squareRoot  25
+  Should Be Equal As Numbers  ${result}  5
