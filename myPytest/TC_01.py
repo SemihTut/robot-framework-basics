@@ -1,6 +1,3 @@
-import csv
-import json
-import pytest
 import requests
 
 url = 'https://l9njuzrhf3.execute-api.eu-west-1.amazonaws.com/prod/'

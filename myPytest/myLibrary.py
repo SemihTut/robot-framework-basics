@@ -10,11 +10,12 @@ def get_user_or_group_by_id(userOrGroup: str, ids: int):
     return requests.get(url + userOrGroup + '/' + str(ids), headers=headers)
 
 
-def test_get_all_group():
-    resp = get_user_or_group_by_id("group", 2)
-    resBody = resp.json()
-    assert resp.status_code == 200
-    assert resBody["name"] == "Denis's Group"
+def get_all_user_or_group(userOrGroup: str):
+    return requests.get(url + userOrGroup + userOrGroup, headers=headers)
+
+
+def get_user(number: int):
+    return requests.get(url + 'user/' + str(number), headers=headers)
 
 
 def name_generator(chars=string.ascii_uppercase):
